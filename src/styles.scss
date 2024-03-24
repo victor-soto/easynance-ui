@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('./assets/scss/variables.scss');
+@import './assets/scss/variables.scss';
+@import './assets/scss/button.scss';
+@import './assets/scss/form.scss';
+@import './assets/scss/normalize.scss';
+@import './assets/scss/fonts.scss';
+
+body {
+  font-family: $roboto-condensed;
+  background: $neutral-200;
+}
