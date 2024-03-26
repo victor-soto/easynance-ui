@@ -1,40 +1,38 @@
 # FrontEasynance
 
-# Super Exchange Rate
+## Description
+Easynance is a personal budgeting webapp.
 
-## Descripción
-Super Exchange Rate es una aplicación web responsive diseñada para permitir a los usuarios consultar tipos de cambio, agregar cambios favoritos y realizar transferencias utilizando un tipo de cambio favorito. Construido con Angular v16, ofrece una experiencia de usuario fluida y funcionalidades ricas para la gestión de divisas.
-
-## Tecnologías
-- Angular v16
-- Angular material
-- RxJS
+## Technologies
+- Angular v17
 - ESLint
-- **API de Tipo de Cambio**: Utilizamos la API de RapidAPI para obtener información actualizada de los tipos de cambio. La documentación de la API puede encontrarse [aquí](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates/).
 
-## Instalación
-Para ejecutar este proyecto en tu máquina local, necesitarás Node.js con la versión 16.20.0 o superiores y Angular CLI.
-Una vez instalados, sigue estos pasos:
+## Prerequisites
+- Node.js v18.
+- Angular CLI 17.
+
+## Install
+In order to run this project in a local environment, execute the following commands:
 
 ```bash
-git clone https://github.com/kevip/super-exchange-rate.git
-cd super-exchange-rate
+git clone https://github.com/victor-soto/easynance.git
+cd easynance/frontend
 npm install
 ng serve
 ```
 
-## Lineamientos técnicos
+## Technical Guidelines
 
-### Pruebas unitarias
-Las pruebas unitarias están escritas en Jasmine Y siguen el patrón AAA(Arrange, Act, Assert).
+### Unit tests
+Unit tests should be written with the AAA pattern(Arrange, Act, Assert).
 
-Cada test es único e independiente y solo se tiene un expect por cada caso.
+Each test is unique and independent and only one "expect" per case should be written.
 
-La estructura de los test cases es la siguiente:
+The structure of unit tests should have the following schema:
 
 ```js
-describe('when <caso de prueba>', () => {
-    it('should <descripción de caso de prueba>' () => {
+describe('when <test case>', () => {
+    it('should <unit test description>' () => {
       // Arrange
       ...
       // Act
@@ -45,9 +43,9 @@ describe('when <caso de prueba>', () => {
 });
 ```
 
-### Commits:
-El formato de los mensajes de los commits tienen la siguiente estructura:
+### Commits
+Commits should have the following structure:
 ```bash
-git commit -m "<tipo de commit>: <descripción del commit>"
+git commit -m "<type>: <description>"
 ```
-Se tomó como referencia la siguiente convención: https://www.conventionalcommits.org/en/v1.0.0/
+Reference [here](https://www.conventionalcommits.org/en/v1.0.0/)
