@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
 
 export default [
-  { path: '', loadComponent: () => import('./login.component') },
+  { path: '', loadComponent: () => import('./home.component') },
 ] as Routes;
