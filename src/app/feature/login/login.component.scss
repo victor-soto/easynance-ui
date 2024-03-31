@@ -20,6 +20,9 @@
     width: 100%;
     padding: 20px;
   }
+  .form-control:nth-child(n-1) {
+    margin-bottom: 10px;
+  }
 }
 .title > h1 {
   font-size: 3.6rem;

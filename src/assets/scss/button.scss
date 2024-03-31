@@ -6,12 +6,14 @@
   &:not(disabled) {
     cursor: pointer;
   }
+  &:hover {
+    transition: 0.5s all;
+  }
   &-primary {
-    color: $primary-100;
+    color: white;
     background-color: $primary-500;
     &:hover {
-      background-color: $primary-200;
-      transition: 0.5s all;
+      background-color: $primary-400;
     }
   }
   &-secondary {
@@ -19,6 +21,10 @@
   }
   &-error {
     background-color: $error-500;
+    color: white;
+    &:hover {
+      background-color: $error-400;
+    }
   }
   &-warning {
     background-color: $warning-500;

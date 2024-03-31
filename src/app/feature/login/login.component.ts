@@ -3,11 +3,12 @@ import { FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule } f
 import { take } from 'rxjs';
 
 import { AuthHttp } from '../../shared/http/auth-http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'eznance-login',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

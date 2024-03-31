@@ -9,6 +9,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'login', loadChildren: () => import('./feature/login/login.routes') },
+  { path: 'register', loadChildren: () => import('./feature/registration/registration.routes') },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

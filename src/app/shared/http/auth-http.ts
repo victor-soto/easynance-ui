@@ -26,4 +26,10 @@ export class AuthHttp {
       tap(() => this.authService.removeDataFromStorage())
     );
   }
+
+  register(request: unknown): Observable<unknown> {
+    const endpoint = `${environment.API_URL}/users`;
+
+    return this.http.post(endpoint, request);
+  }
 }
