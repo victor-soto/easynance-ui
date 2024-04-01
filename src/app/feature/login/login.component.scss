@@ -18,13 +18,13 @@
   .wrap {
     max-width: 400px;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
   }
-  .form-control:nth-child(n-1) {
+  .form-group:nth-of-type(n-1) {
     margin-bottom: 10px;
   }
 }
 .title > h1 {
-  font-size: 3.6rem;
+  font-size: 2.5rem;
   text-align: center;
 }

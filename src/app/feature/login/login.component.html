@@ -5,17 +5,26 @@
     </div>
     <div class="">
       <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
-        <div class="form-group">
-          <input class="form-control" type="text" name="username" autofocus="1" placeholder="Email" formControlName="username">
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" name="username" autofocus="1" placeholder="Email" formControlName="username">
+            @if(form.controls['username'].invalid) {
+              <mat-error>Email incorrecto</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="password" placeholder="Password" formControlName="password">
+          <button class="form-control" mat-raised-button color="primary" >SIGN IN</button>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block submit">SIGN IN</button>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-error btn-block" [routerLink]="['/register']">SIGN UP</button>
+          <button class="form-control" mat-flat-button color="tertiary" [routerLink]="['/register']">SIGN UP</button>
         </div>
       </form>
     </div>

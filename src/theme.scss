@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+
+// @include mat.core();
+
+// $azure: mat-palette($mat-blue, 500);
+
+// $blue: mat-palette($mat-indigo, 700);
+
+// $azure-blue-theme: mat-light-theme(mat.$m3-azure-palette, mat.$m3-blue-palette);
+
+// @include angular-material-theme($azure-blue-theme);
+
+$primary: mat.define-palette(mat.$blue-palette, 500);
+
+$accent: mat.define-palette(mat.$indigo-palette, 500);
+
+$warn: mat.define-palette(mat.$red-palette);
+
+$light-theme: mat.define-light-theme((
+  color: (
+   primary: $primary,
+   accent: $accent,
+   warn: $warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+// @include mat.all-component-themes($light-theme);
+
+$theme-m3: matx.define-theme((
+  color: (
+    theme-type: light,
+    primary: matx.$m3-azure-palette,
+    tertiary: matx.$m3-blue-palette
+  ),
+  typography: (
+    brand-family: 'Roboto',
+    bold-weight: 900
+  ),
+  density: (
+    scale: -1
+  )
+));
+html {
+
+  @include mat.all-component-themes($theme-m3);
+}

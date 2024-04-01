@@ -1,14 +1,26 @@
 import { Component, inject } from '@angular/core';
-import { FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { take } from 'rxjs';
 
 import { AuthHttp } from '../../shared/http/auth-http';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'eznance-login',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, RouterLink],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterLink,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -22,7 +34,7 @@ export default class LoginComponent {
 
   constructor() {
     this.form = this.formBuilder.group({
-      username: [''],
+      username: ['', [Validators.email]],
       password: ['']
     });
   }

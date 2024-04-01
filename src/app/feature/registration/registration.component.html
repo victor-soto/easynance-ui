@@ -5,23 +5,41 @@
     </div>
     <div class="">
       <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
-        <div class="form-group">
-          <input class="form-control" type="text" name="username" autofocus="1" placeholder="Username" formControlName="username">
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" name="username" autofocus="1" placeholder="Username" formControlName="username">
+          </mat-form-field>
+        </div>
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" placeholder="Email" formControlName="email">
+            @if(form.controls['email'].invalid) {
+              <mat-error>Email incorrecto</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input matInput type="text" name="firstName" placeholder="First name" formControlName="firstName">
+          </mat-form-field>
+        </div>
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input matInput type="text" name="lastName" placeholder="Last name" formControlName="lastName">
+          </mat-form-field>
+        </div>
+        <div class="form-group full-width">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" placeholder="Password" formControlName="password">
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="firstName" placeholder="First name" formControlName="firstName">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="lastName" placeholder="Last name" formControlName="lastName">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" name="password" placeholder="Password" formControlName="password">
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block submit">SIGN UP</button>
+          <button mat-flat-button color="primary" class="form-control">SIGN UP</button>
         </div>
       </form>
     </div>
