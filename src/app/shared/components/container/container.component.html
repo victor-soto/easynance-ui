@@ -1,0 +1,16 @@
+<div class="container-wrapper">
+  <mat-sidenav-container class="app-drawer-container" fullscreen>
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" fullscreen>
+      <mat-nav-list>
+        @for (nav of navList; track nav) {
+        <a mat-list-item routerLink=".">{{nav}}</a>
+        <mat-divider></mat-divider>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
