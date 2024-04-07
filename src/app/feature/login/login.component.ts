@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,6 +30,8 @@ export default class LoginComponent {
 
   private readonly authHttp = inject(AuthHttp);
 
+  private readonly router = inject(Router);
+
   form!: FormGroup;
 
   constructor() {
@@ -41,6 +43,10 @@ export default class LoginComponent {
 
   submit(): void {
     const form = this.form.value;
-    this.authHttp.login(form).pipe(take(1)).subscribe();
+    this.authHttp.login(form).pipe(take(1)).subscribe({
+      next: () => {
+        this.router.navigate(['/home']);
+      }
+    });
   }
 }

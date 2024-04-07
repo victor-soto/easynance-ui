@@ -4,6 +4,8 @@ import { SideNavService } from '../../services/side-nav.service';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { AuthHttp } from '../../http/auth-http';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'eznance-container',
@@ -19,6 +21,8 @@ import { MatListModule } from '@angular/material/list';
 })
 export class ContainerComponent implements OnInit {
   sideNavService = inject(SideNavService);
+
+  authHttp = inject(AuthHttp);
 
   mobileQuery: MediaQueryList;
 
@@ -39,5 +43,9 @@ export class ContainerComponent implements OnInit {
     this.sideNavService.sideNavToggle$.subscribe(() => {
       this.sidenav.toggle();
     });
+  }
+
+  logout(): void {
+    this.authHttp.logout().pipe(take(1)).subscribe();
   }
 }

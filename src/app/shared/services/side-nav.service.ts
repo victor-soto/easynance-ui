@@ -6,11 +6,8 @@ import { Subject } from 'rxjs';
 })
 export class SideNavService {
   private sideNavToggle = new Subject();
-  sideNavToggle$ = this.sideNavToggle.asObservable();
 
-  constructor() {
-    console.log('epale');
-  }
+  sideNavToggle$ = this.sideNavToggle.asObservable();
 
   toggle(): void {
     this.sideNavToggle.next(null);
