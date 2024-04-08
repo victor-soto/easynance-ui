@@ -1,10 +1,17 @@
-.mat-toolbar {
+mat-toolbar.toolbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+  background: rgb(101, 173, 197);
+  background: linear-gradient(43deg, rgba(101, 173, 197, 1) 0%, rgba(155, 115, 162, 1) 100%);
 }
+
+button.menu-button {
+  color: #ffffff;
+}
+
 eznance-header {
   display: flex;
   flex-wrap: wrap;
