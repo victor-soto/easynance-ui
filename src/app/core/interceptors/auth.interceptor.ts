@@ -5,7 +5,7 @@ import { environment } from '../../../environments/environment';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
-  if (req.url.startsWith(`${environment.API_URL}/login`)) {
+  if (req.url.startsWith(`${environment.API_URL}/login`) || req.url.startsWith(`${environment.API_URL}/users`)) {
 
     return next(req);
   }
